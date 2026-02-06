@@ -2,10 +2,10 @@
 # Simple business script to calculate Net Profit after tax for a list of sales figures.
 # Detailed comments explain each variable, list, and the loop logic.
 
-# tax_rate: the percentage of each sale taken as tax (decimal form).
-# Example: 0.18 means 18% tax.
 from typing import List
 
+# tax_rate: the percentage of each sale taken as tax (decimal form).
+# Example: 0.18 means 18% tax.
 tax_rate: float = 0.18
 
 # sales: a list of individual sale amounts (floats).
@@ -33,13 +33,13 @@ for sale in sales:
 
     # Calculate tax for this single sale.
     # Multiplying each sale by tax_rate gives tax owed for this sale.
-tax_for_sale = sale * tax_rate
+    tax_for_sale = sale * tax_rate
 
     # Add the per-sale tax to the running total tax.
     total_tax += tax_for_sale  # same as: total_tax = total_tax + tax_for_sale
 
     # (Optional) You could print per-sale details inside the loop to inspect flow:
-    # print(f"Processed sale={{sale:.2f}}, tax_for_sale={{tax_for_sale:.2f}}, running_total_sales={{total_sales:.2f}}")
+    # print(f"Processed sale={sale:.2f}, tax_for_sale={tax_for_sale:.2f}, running_total_sales={total_sales:.2f}")
 
 # After the loop completes:
 # total_sales now holds the sum of all sales in the list.
@@ -50,9 +50,9 @@ net_profit: float = total_sales - total_tax
 
 # Print summary results, formatted to two decimal places for clarity and aligned columns for readability.
 print("Business Summary:")
-print(f"  Total sales:      ${{total_sales:10.2f}}")
-print(f"  Total tax:        ${{total_tax:10.2f}}  (tax rate = {{tax_rate:.1%}})")
-print(f"  Net profit (after tax): ${{net_profit:10.2f}}")
+print(f"  Total sales:      ${total_sales:10.2f}")
+print(f"  Total tax:        ${total_tax:10.2f}  (tax rate = {tax_rate:.1%})")
+print(f"  Net profit (after tax): ${net_profit:10.2f}")
 
 # Notes and learning points:
 # - Using accumulators (total_sales and total_tax) is a common pattern:
